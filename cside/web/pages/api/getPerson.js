@@ -1,7 +1,7 @@
 const db = require('../../server/db/connectToDB').default.instance;
 
 async function call() {
-    const post = await db.one('SELECT * FROM persons WHERE id=\'1\'')
+    const post = await db.one('SELECT * FROM students WHERE id=\'1\'')
     return post
 }
 

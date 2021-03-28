@@ -1,5 +1,9 @@
 const pgp = require('pg-promise')();
-
+// SSL for Heroku
+let ssl = null;
+if (process.env.NODE_ENV !== 'development') {
+   ssl = {rejectUnauthorized: false};
+}
 // Get these values from configuration
 const user = process.env.DB_USER
 const password = process.env.DB_PASS
@@ -12,7 +16,12 @@ const DB_KEY = Symbol.for("MyApp.db");
 const globalSymbols = Object.getOwnPropertySymbols(global);
 const hasDb = (globalSymbols.indexOf(DB_KEY) > -1);
 if (!hasDb) {
-    global[DB_KEY] = pgp(`postgres://${user}:${password}@${host}:${port}/${database}`);
+    const config = {
+        connectionString: `postgres://${user}:${password}@${host}:${port}/${database}`,
+        max: 30,
+        ssl:ssl
+    };
+    global[DB_KEY] = pgp(config)
 }
 
 // Create and freeze the singleton object so that it has an instance property.
