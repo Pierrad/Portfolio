@@ -2,3 +2,12 @@ https://github.com/vitaly-t/pg-promise
 
 ```docker-compose build```
 ```docker-compose up```
+
+## Use Heroku database on local
+- ```heroku pg:backups:capture```
+- ```heroku pg:backups:download```
+- ```cd latest.dump sside/db/```
+- run docker container
+- ```docker cp latest.dump portfolio_db_1:./```
+- ```docker exec -it portfolio_db_1 /bin/sh```
+- ```pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d testdb latest.dump```

@@ -10,7 +10,7 @@ COPY . /usr/src
 ENV NODE_ENV=production
 
 # install dependencies
-RUN yarn install
+RUN yarn install --production=false
 
 # start app 
 RUN yarn build
