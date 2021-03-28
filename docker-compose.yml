@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: ./cside/web
+      dockerfile: Dockerfile
+    command: sh -c "yarn install && yarn dev -H ${APP_URL} -p ${APP_PORT}"
+    volumes:
+      - './cside/web:/usr/src'
+      - /usr/src/node_modules
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    links:
+    - db
+  storybook:
+    build:
+      context: ./cside/web
+      dockerfile: Dockerfile
+    command: sh -c "yarn install --production=false && yarn storybook -s ./public -p ${PORT_STORYBOOK} --ci"
+    env_file:
+      - .env
+    ports:
+      - ${PORT_STORYBOOK}:${PORT_STORYBOOK}
+    volumes:
+      - './cside/web:/usr/src'
+      - /usr/src/node_modules
+  db:
+    build:
+      context: ./sside/db
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./sside/db/postgres-data:/var/lib/postgresql/data
