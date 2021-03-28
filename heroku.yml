@@ -1,0 +1,4 @@
+build:
+  docker:
+    web: cside/web/Dockerfile
+    db: sside/db/Dockerfile
