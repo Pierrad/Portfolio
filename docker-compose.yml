@@ -35,4 +35,4 @@ services:
     ports:
       - "${DB_PORT}:${DB_PORT}"
     volumes:
-      - ./sside/db/postgres-data:/var/lib/postgresql/data
+      - ./sside/db/postgres-data:/var/lib/postgresql/db
