@@ -3,6 +3,10 @@ https://github.com/vitaly-t/pg-promise
 ```docker-compose build```
 ```docker-compose up```
 
+## Automatic deploy from github subdirectory
+https://stackoverflow.com/questions/39197334/automated-heroku-deploy-from-subfolder
+Add ```"start": "next start -p $PORT"``` to nextjs => package.json
+
 ## Use Heroku database on local
 - ```heroku pg:backups:capture```
 - ```heroku pg:backups:download```
