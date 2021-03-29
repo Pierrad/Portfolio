@@ -1,8 +1,8 @@
 const pgp = require('pg-promise')();
 // SSL for Heroku
 let ssl = null;
-if (process.env.NODE_ENV === ('development' || 'production')) {
-   ssl = {rejectUnauthorized: false};
+if (process.env.NODE_ENV) {
+   ssl = {rejectUnauthorized: false}
 }
 // Get these values from configuration
 const user = process.env.HEROKU_DB_USER || process.env.DB_USER
