@@ -1,7 +1,9 @@
-const db = require('../../server/db/connectToDB').default.instance;
+const db = require('../../server/db/connectToDB').default.instance
 
 async function call() {
-    const post = await db.one('INSERT INTO persons (id, firstname, lastname) VALUES (1, \'Isa\', \'Lindta\')')
+    const post = await db.one(
+        "INSERT INTO persons (id, firstname, lastname) VALUES (1, 'Isa', 'Lindta')"
+    )
     return post
 }
 
