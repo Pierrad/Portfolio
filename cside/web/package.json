@@ -15,14 +15,16 @@
     "next": "10.0.9",
     "pg-promise": "^10.9.5",
     "react": "next",
-    "react-dom": "next"
+    "react-dom": "next",
+    "styled-components": "^5.2.2",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.13",
-    "@storybook/addon-actions": "^6.1.21",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.21",
-    "@storybook/react": "^6.1.21",
+    "@storybook/addon-actions": "^6.2.1",
+    "@storybook/addon-essentials": "^6.2.1",
+    "@storybook/addon-links": "^6.2.1",
+    "@storybook/react": "^6.2.1",
     "babel-loader": "^8.2.2",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
