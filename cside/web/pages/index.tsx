@@ -1,13 +1,14 @@
 import Head from 'next/head'
+import { ReactNode } from 'react'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home(): string {
   return (
     <div className={styles.container}>
-      <Head
+      <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head
+      </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
