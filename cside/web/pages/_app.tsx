@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components'
 import { useState, useEffect } from 'react'
 import useDarkMode from 'use-dark-mode'
-import { lightTheme, darkTheme, GlobalStyles } from '../styles/themeConfig'
+import { lightTheme, darkTheme, GlobalStyles } from '../styles/ThemeConfig'
 
 export default function App({ Component, pageProps }) {
   const [isMounted, setIsMounted] = useState(false)
