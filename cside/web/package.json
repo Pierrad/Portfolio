@@ -11,6 +11,11 @@
     "prepare": "cd ../.. && husky install cside/web/.husky",
     "postinstall": "cd ../.. && husky install cside/web/.husky"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@types/node": "^14.14.37",
     "@types/react": "^17.0.3",
