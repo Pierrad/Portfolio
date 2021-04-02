@@ -7,9 +7,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "lint": "eslint --ext js,jsx,ts,tsx --fix",
-    "prepare": "cd ../.. && husky install cside/web/.husky",
-    "postinstall": "cd ../.. && husky install cside/web/.husky"
+    "lint": "eslint --ext js,jsx,ts,tsx --fix"
   },
   "husky": {
     "hooks": {
