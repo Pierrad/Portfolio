@@ -1,3 +1,5 @@
 /sside/db/postgres-data/
 .env
 *.dump
+.vscode/settings.json
+.vscode/
