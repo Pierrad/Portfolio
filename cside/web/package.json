@@ -11,7 +11,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "cd cside/web/ && yarn lint-staged"
     }
   },
   "dependencies": {
