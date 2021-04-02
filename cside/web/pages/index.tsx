@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { ReactNode } from 'react'
 import styles from '../styles/Home.module.css'
-
-export default function Home(): number {
+{
+}
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
