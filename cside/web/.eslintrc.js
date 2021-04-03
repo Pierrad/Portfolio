@@ -47,6 +47,12 @@ module.exports = {
               allowConciseArrowFunctionExpressionsStartingWithVoid: true,
             },
           ],
+          "@typescript-eslint/no-empty-interface": [
+            "error",
+            {
+              "allowSingleExtends": true
+            }
+          ],
           'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
         },
       },
