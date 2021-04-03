@@ -1,4 +1,4 @@
-import { createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from 'styled-components'
 
 export const lightTheme = {
   body: '#FFF',
@@ -22,3 +22,12 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
   }
 `
+
+const customMediaQuery = (maxWidth: number): string => `@media (max-width: ${maxWidth}px)`
+
+export const media = {
+  custom: customMediaQuery,
+  desktop: customMediaQuery(922),
+  tablet: customMediaQuery(768),
+  phone: customMediaQuery(576),
+}
