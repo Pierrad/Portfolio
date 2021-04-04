@@ -13,4 +13,5 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   const result = await call()
   res.status(200).json(result)
 }
+
 export default handler

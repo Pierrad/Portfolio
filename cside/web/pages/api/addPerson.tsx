@@ -3,6 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const db = require('../../server/db/connectToDB').default.instance
 import { NextApiRequest, NextApiResponse } from 'next'
+import { getSession } from 'next-auth/client'
 
 async function call() {
   const post = await db.one(
@@ -12,7 +13,14 @@ async function call() {
 }
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const result = await call()
-  res.status(200).json(result)
+  const session = await getSession({ req })
+  if (session) {
+    const result = await call()
+    res.status(200).json(result)
+  } else {
+    res.status(403).json({
+      message: 'You must be sign in to view the protected content on this page.',
+    })
+  }
 }
 export default handler
