@@ -17,6 +17,7 @@
     "@types/styled-components": "^5.1.9",
     "next": "10.1.2",
     "next-auth": "^3.13.3",
+    "node-jose-tools": "^1.6.28",
     "pg-promise": "^10.9.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",

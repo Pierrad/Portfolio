@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text } from './index.styles'
+import { Container, Box, Text } from './index.styles'
 
 export type CardProps = {
   address?: string
@@ -14,19 +14,21 @@ export type CardProps = {
 
 export const Card: React.FC<CardProps> = (props) => {
   return (
-    <Box>
-      {props && (
-        <>
-          <Text>{props.address}</Text>
-          <Text>{props.city}</Text>
-          <Text>{props.date_of_birth}</Text>
-          <Text>{props.email}</Text>
-          <Text>{props.first_name}</Text>
-          <Text>{props.gender}</Text>
-          <Text>{props.last_name}</Text>
-          <Text>{props.phone}</Text>
-        </>
-      )}
-    </Box>
+    <Container>
+      <Box>
+        {props && (
+          <>
+            <Text>{props.address}</Text>
+            <Text>{props.city}</Text>
+            <Text>{props.date_of_birth}</Text>
+            <Text>{props.email}</Text>
+            <Text>{props.first_name}</Text>
+            <Text>{props.gender}</Text>
+            <Text>{props.last_name}</Text>
+            <Text>{props.phone}</Text>
+          </>
+        )}
+      </Box>
+    </Container>
   )
 }

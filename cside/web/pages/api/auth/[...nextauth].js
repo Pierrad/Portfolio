@@ -18,10 +18,8 @@ const options = {
         },
         async authorize(credentials) {
           try {
-            const login = await db.one("SELECT * FROM users WHERE id='1'")
-            const isAuthorize = credentials.username == login.pseudo && credentials.password == login.password
-            console.log(isAuthorize)
-            if (isAuthorize) {
+            const login = await db.one(`SELECT * FROM users WHERE pseudo='${credentials.username}' AND password='${credentials.password}'`)
+            if (login) {
               const user = { id: 1, pseudo: credentials.username, password: credentials.password }
               return user
             } else {
@@ -40,6 +38,9 @@ const options = {
   session: {
     jwt: true,
     maxAge: 30 * 24 * 60 * 60 // 30 days
+  },
+  jwt: {
+    signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
   },
 }
 

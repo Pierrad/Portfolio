@@ -20,8 +20,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.50s linear;
+    width: 100%;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
   @font-face {
       font-family: 'Poppins-Black';
