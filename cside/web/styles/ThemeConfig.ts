@@ -20,6 +20,20 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.50s linear;
+    padding: 0;
+    margin: 0;
+  }
+  @font-face {
+      font-family: 'Poppins-Black';
+      src: url('/fonts/Poppins/Poppins-Black.woff') format('woff');
+  }
+  @font-face {
+      font-family: 'Poppins-Bold';
+      src: url('/fonts/Poppins/Poppins-Bold.woff') format('woff');
+  }
+  @font-face {
+      font-family: 'Poppins-Regular';
+      src: url('/fonts/Poppins/Poppins-Regular.woff') format('woff');
   }
 `
 
@@ -41,32 +55,35 @@ export const colors = {
 
 export const textStyles = {
   title: css`
-    font-family: '../static/fonts/Poppins/Poppins-Black.ttf';
+    font-family: 'Poppins-Black';
     font-size: 7.2rem;
     line-height: 1;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    margin: 0;
   `,
   subtitle: css`
-    font-family: '../static/fonts/Poppins/Poppins-Bold.ttf';
+    font-family: 'Poppins-Bold';
     font-size: 2.4rem;
     line-height: 2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    margin: 0;
   `,
   navTitle: css`
-    font-family: '../static/fonts/Poppins/Poppins-Bold.ttf';
+    font-family: 'Poppins-Bold';
     font-size: 2.4rem;
     line-height: 2rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: ${colors.purple};
+    margin: 0;
   `,
   texte: css`
-    font-family: '../static/fonts/Poppins/Poppins-Regular.ttf';
+    font-family: 'Poppins-Regular';
     font-size: 2rem;
     line-height: 2rem;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
+    margin: 0;
   `,
 }

@@ -8,5 +8,13 @@ module.exports = {
         // your project has type errors.
         // !! WARN !!
         ignoreBuildErrors: true,
-      },
+    },
+    module: {
+        rules: [
+          {
+            test: /\.(woff2|woff|eot|ttf|otf)$/,
+            use: ["file-loader"],
+          },
+        ],
+    },
 }
