@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './index.styles'
+import { Button } from './styled'
 
 type ActionButtonProps = {
   children: string
@@ -13,3 +13,5 @@ async function callAPI(): Promise<any> {
 export const ActionButton: React.FC<ActionButtonProps> = ({ children }) => {
   return <Button onClick={() => callAPI()}>{children}</Button>
 }
+
+export default ActionButton

@@ -5,6 +5,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { server } from '../server/config'
 import Link from 'next/link'
 import { signIn } from 'next-auth/client'
+import ToggleTheme from '../src/components/ToggleTheme'
 
 function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   const renderCard = useMemo(() => {
@@ -13,6 +14,7 @@ function Home({ data }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Ele
 
   return (
     <>
+      <ToggleTheme />
       <div>About</div>
       <ActionButton>test</ActionButton>
       <Link href={`${server}/api/auth/signin`}>

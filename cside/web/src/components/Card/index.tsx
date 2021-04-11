@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Box, Text } from './index.styles'
+import { Container, Box, Text } from './styled'
 
 export type CardProps = {
   address?: string
@@ -32,3 +32,5 @@ export const Card: React.FC<CardProps> = (props) => {
     </Container>
   )
 }
+
+export default Card

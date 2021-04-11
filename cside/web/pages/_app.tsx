@@ -17,12 +17,7 @@ export default function App({ Component, pageProps }: AppProps): ReactFragment {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Provider session={pageProps.session}>
-        <button onClick={darkmode.toggle}>Switch Mode</button>
-        <button onClick={darkmode.enable}>Dark Mode</button>
-        <button onClick={darkmode.disable}>Light Mode</button>
-        {isMounted && <Component {...pageProps} />}
-      </Provider>
+      <Provider session={pageProps.session}>{isMounted && <Component {...pageProps} />}</Provider>
     </ThemeProvider>
   )
 }

@@ -2,6 +2,7 @@ https://github.com/vitaly-t/pg-promise
 https://paulintrognon.fr/blog/typescript-prettier-eslint-next-js
 https://themeptation.medium.com/how-to-use-styled-components-on-nextjs-and-typescript-1c5388e36eb
 https://blog.logrocket.com/using-authentication-in-next-js/
+https://gitmoji.dev/
 
 ```docker-compose build```
 ```docker-compose up```
