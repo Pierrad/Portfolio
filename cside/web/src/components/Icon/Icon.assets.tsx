@@ -1,43 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Sun from './icons/sun.svg'
-import Moon from './icons/moon.svg'
-
 export const iconsKeys = {
   Sun: 'Sun',
   Moon: 'Moon',
 }
 
 type IconWrapperProps = {
-  Component: React.FunctionComponent<React.SVGAttributes<SVGElement>>
+  SVG: string
   width: number
   height: number
 }
 
-const IconWrapper: React.FC<IconWrapperProps> = ({ Component, width, height }) => {
+const IconWrapper = ({ SVG, width, height }: IconWrapperProps): React.ReactElement => {
   const IconWrapperStyles = styled.div`
-    icon: {
+    img: {
       width: ${width / 10}rem;
       height: ${height / 10}rem;
-    }
-    asset: {
-      width: '100%';
-      height: '100%';
-      display: 'inline-block';
     }
   `
 
   return (
     <IconWrapperStyles>
-      <Component />
+      <img src={`icons/${SVG}.svg`} alt={`An icon of ${SVG}`} />
     </IconWrapperStyles>
   )
 }
 
 export const icons = {
-  [iconsKeys.Sun]: IconWrapper(Sun, 22, 22),
-  [iconsKeys.Moon]: IconWrapper(Moon, 32, 32),
+  [iconsKeys.Sun]: IconWrapper({ SVG: 'sun', width: 22, height: 22 }),
+  [iconsKeys.Moon]: IconWrapper({ SVG: 'moon', width: 32, height: 32 }),
 }
-
-export default icons

@@ -10,13 +10,9 @@ type IconProps = {
 const Icon: React.FC<IconProps> = (props) => {
   const { icon } = props
 
-  const IconComponent: React.ElementType = icons[icon]
+  const IconComponent = icons[icon]
 
-  return (
-    <IconStyle>
-      <IconComponent />
-    </IconStyle>
-  )
+  return <IconStyle>{IconComponent}</IconStyle>
 }
 
 export default Icon
